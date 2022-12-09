@@ -2,6 +2,8 @@
 // Created by Kirill Zhukov on 05.12.2022.
 //
 
+// share theia native interface
+
 #ifndef VM_WITH_HEAP_S_TNI_H
 #define VM_WITH_HEAP_S_TNI_H
 

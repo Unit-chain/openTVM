@@ -107,7 +107,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "23"
+			"value" : "24"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -120,6 +120,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "2"
+		},
+		{
+			"name" : "CMAKE_COLOR_DIAGNOSTICS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable colored diagnostics throughout."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -170,7 +182,7 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
 		},
 		{
@@ -266,7 +278,7 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
 		},
 		{
@@ -484,6 +496,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : ""
+		},
+		{
+			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake."
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/kirillzhukov/CLionProjects/spark_vm/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -763,7 +787,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "12.0"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -775,7 +799,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk"
+			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -867,7 +891,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/share/cmake-3.23"
+			"value" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/share/cmake-3.24"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1168,6 +1192,66 @@
 			],
 			"type" : "STATIC",
 			"value" : "/Users/kirillzhukov/CLionProjects/spark_vm"
+		},
+		{
+			"name" : "xxHash::xxhash_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for xxHash::xxhash."
+				}
+			],
+			"type" : "PATH",
+			"value" : "xxHash::xxhash_DIR-NOTFOUND"
+		},
+		{
+			"name" : "xxHash_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for xxHash."
+				}
+			],
+			"type" : "PATH",
+			"value" : "xxHash_DIR-NOTFOUND"
+		},
+		{
+			"name" : "xxhash/lib_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for xxhash/lib."
+				}
+			],
+			"type" : "PATH",
+			"value" : "xxhash/lib_DIR-NOTFOUND"
+		},
+		{
+			"name" : "xxhash/xxHash_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for xxhash/xxHash."
+				}
+			],
+			"type" : "PATH",
+			"value" : "xxhash/xxHash_DIR-NOTFOUND"
+		},
+		{
+			"name" : "xxhash_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for xxhash."
+				}
+			],
+			"type" : "PATH",
+			"value" : "xxhash_DIR-NOTFOUND"
 		}
 	],
 	"kind" : "cache",

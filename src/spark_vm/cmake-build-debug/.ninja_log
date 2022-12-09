@@ -1,4 +1,23 @@
 # ninja log v5
-375	406	1670272219726981960	vm_with_heap	379e0149595f7108
-3	375	1670272219693280623	CMakeFiles/vm_with_heap.dir/main.cpp.o	b9d1c0d910eacf76
-0	47	1670272250070284533	build.ninja	b92865c887388df6
+4	130	1670583606753774917	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/xxhash.c.o	eed2e4ee8b06b7ee
+4	115	1670583606739140461	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/MurmurHash3.cpp.o	eb6717f17b3ca044
+0	47	1670611091929153700	build.ninja	b92865c887388df6
+5	283	1670609598106660614	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+283	321	1670609598145523106	vm_with_heap	35dc2c07581eca
+0	66	1670611091929153700	build.ninja	4f744ef962a02e5d
+6	555	1670611092488553374	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+556	609	1670611092544384568	vm_with_heap	35dc2c07581eca
+7	554	1670611194616795818	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+554	606	1670611194670163394	vm_with_heap	35dc2c07581eca
+4	302	1670611202573776993	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+302	334	1670611202607035839	vm_with_heap	35dc2c07581eca
+5	513	1670611381873884895	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+513	562	1670611381924702979	vm_with_heap	35dc2c07581eca
+4	258	1670611386642391936	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+258	289	1670611386674222186	vm_with_heap	35dc2c07581eca
+10	280	1670611402002229843	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+280	313	1670611402036204342	vm_with_heap	35dc2c07581eca
+5	298	1670611415680615209	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+299	332	1670611415715213695	vm_with_heap	35dc2c07581eca
+7	558	1670613797613458502	CMakeFiles/vm_with_heap.dir/main.cpp.o	df8c21b5dd6e2ae0
+558	616	1670613797673246545	vm_with_heap	35dc2c07581eca
