@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/Boost-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/Boost-1.80.0"
 		},
 		{
 			"name" : "Boost_INCLUDE_DIR",
@@ -182,7 +182,7 @@
 					"value" : "CXX compiler"
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"
 		},
 		{
@@ -278,7 +278,7 @@
 					"value" : "C compiler"
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc"
 		},
 		{
@@ -787,7 +787,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : ""
+			"value" : "13.0"
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -799,7 +799,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.0.sdk"
+			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake][c ][v1.79.0()]"
+			"value" : "[/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake][c ][v1.80.0()]"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -1155,7 +1155,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/boost_headers-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/boost_headers-1.80.0"
 		},
 		{
 			"name" : "vm_with_heap_BINARY_DIR",
@@ -1192,66 +1192,6 @@
 			],
 			"type" : "STATIC",
 			"value" : "/Users/kirillzhukov/CLionProjects/spark_vm"
-		},
-		{
-			"name" : "xxHash::xxhash_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for xxHash::xxhash."
-				}
-			],
-			"type" : "PATH",
-			"value" : "xxHash::xxhash_DIR-NOTFOUND"
-		},
-		{
-			"name" : "xxHash_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for xxHash."
-				}
-			],
-			"type" : "PATH",
-			"value" : "xxHash_DIR-NOTFOUND"
-		},
-		{
-			"name" : "xxhash/lib_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for xxhash/lib."
-				}
-			],
-			"type" : "PATH",
-			"value" : "xxhash/lib_DIR-NOTFOUND"
-		},
-		{
-			"name" : "xxhash/xxHash_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for xxhash/xxHash."
-				}
-			],
-			"type" : "PATH",
-			"value" : "xxhash/xxHash_DIR-NOTFOUND"
-		},
-		{
-			"name" : "xxhash_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for xxhash."
-				}
-			],
-			"type" : "PATH",
-			"value" : "xxhash_DIR-NOTFOUND"
 		}
 	],
 	"kind" : "cache",

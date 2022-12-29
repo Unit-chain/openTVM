@@ -163,19 +163,19 @@
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfigVersion.cmake"
+			"path" : "/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfigVersion.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake"
+			"path" : "/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config-version.cmake"
+			"path" : "/opt/homebrew/lib/cmake/boost_headers-1.80.0/boost_headers-config-version.cmake"
 		},
 		{
 			"isExternal" : true,
-			"path" : "/opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config.cmake"
+			"path" : "/opt/homebrew/lib/cmake/boost_headers-1.80.0/boost_headers-config.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

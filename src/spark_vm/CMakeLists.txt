@@ -4,11 +4,12 @@ project(vm_with_heap)
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(Boost)
-
+#find_package(JEMALLOC)
 include_directories(
         spark/share
         spark/theia.core
         spark/share/utilities
+        spark/service
 )
 
 #file(GLOB_RECURSE SOURCE_FILES "*.cpp" "*.hpp" "*.c" "*.h")
@@ -31,6 +32,12 @@ add_executable(vm_with_heap
         spark/share/utilities/bloomfilter.h
         spark/share/utilities/bloomhash.h
         spark/share/utilities/hash/xxh3.h
-        )
+        spark/share/utilities/hash/sha3.h
+        spark/share/utilities/hash/sha3.cpp
+        spark/share/utilities/hash/SHA256.h
+        spark/share/utilities/hash/SHA256.cpp
+        spark/share/utilities/hash/City.cpp
+        spark/memory/alloc.h
+        spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h)
 
 target_link_libraries(${PROJECT_NAME} Boost::boost)
