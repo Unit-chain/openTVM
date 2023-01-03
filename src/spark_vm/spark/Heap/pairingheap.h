@@ -33,12 +33,12 @@ struct HeapNode {
 
 // Returns true if root of the tree
 // is nullptr otherwise returns false
-bool Empty(HeapNode *node) {
+bool empty(HeapNode *node) {
     return (node == nullptr);
 }
 
 // Function to merge two heaps
-HeapNode *Merge(HeapNode *A, HeapNode *B)
+HeapNode *merge(HeapNode *A, HeapNode *B)
 {
     // If any of the two-nodes is nullptr
     // the return the not nullptr node
@@ -66,12 +66,12 @@ int Top(HeapNode *node) {
 }
 
 // Function to insert the new node in the heap
-HeapNode *Insert(HeapNode *node, int key) {
-    return Merge(node, new HeapNode(key, nullptr, nullptr));
+HeapNode *insert(HeapNode *node, int key) {
+    return merge(node, new HeapNode(key, nullptr, nullptr));
 }
 
 // This method is used when we want to delete root node
-HeapNode *TwoPassMerge(HeapNode *node) {
+HeapNode *twoPassMerge(HeapNode *node) {
     if(node == nullptr || node->nextSibling == nullptr)
         return node;
     else {
@@ -83,15 +83,15 @@ HeapNode *TwoPassMerge(HeapNode *node) {
         A->nextSibling = nullptr;
         B->nextSibling = nullptr;
 
-        return Merge(Merge(A, B), TwoPassMerge(newNode));
+        return merge(merge(A, B), twoPassMerge(newNode));
     }
 
     return nullptr; // Unreachable
 }
 
 // Function to delete the root node in heap
-HeapNode *Delete(HeapNode *node) {
-    return TwoPassMerge(node->leftChild);
+HeapNode *deleteNode(HeapNode *node) {
+    return twoPassMerge(node->leftChild);
 }
 
 struct PairingHeap {
@@ -100,24 +100,24 @@ struct PairingHeap {
     PairingHeap():
             root(nullptr) {}
 
-    bool Empty(void) {
-        return ::Empty(root);
+    bool empty(void) {
+        return ::empty(root);
     }
 
-    int Top(void) {
+    int top(void) {
         return ::Top(root);
     }
 
-    void Insert(int key) {
-        root = ::Insert(root, key);
+    void insert(int key) {
+        root = ::insert(root, key);
     }
 
-    void Delete(void) {
-        root = ::Delete(root);
+    void deleteRootNode(void) {
+        root = ::deleteNode(root);
     }
 
-    void Join(PairingHeap other) {
-        root = ::Merge(root, other.root);
+    void join(PairingHeap other) {
+        root = ::merge(root, other.root);
     }
 
 };

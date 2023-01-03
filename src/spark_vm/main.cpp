@@ -18,13 +18,16 @@ int main(int argc, char* argv[]) {
 }
 #endif
 
-#include <stdio.h>
+#include <cstdio>
 #include <sys/mman.h>
 #include "logger/loggerTime.h"
 #include "logger/logger.h"
 #include "iostream"
 #include "sstream"
 #include "spark/memory/alloc.h"
+
+#define print(x) puts(#x)
+#define concat(x, y) print(x##y)
 
 int main() {
     #if 0
@@ -36,7 +39,8 @@ int main() {
         log(test_err.c_str(), LoggingLevel::DEBUG, stdout);
         log(test_err.c_str(), "dwaddwdawa", stdout);
     #endif
-
+    print(10);
+    concat(10,50);
 //    int N=5;
 //    int *ptr = (int *) mmap ( NULL, N*sizeof(int),
 //                      PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0 );

@@ -38,6 +38,6 @@ add_executable(vm_with_heap
         spark/share/utilities/hash/SHA256.cpp
         spark/share/utilities/hash/City.cpp
         spark/memory/alloc.h
-        spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h)
+        spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h spark/memory/pheap.h)
 
 target_link_libraries(${PROJECT_NAME} Boost::boost)

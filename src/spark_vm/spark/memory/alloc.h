@@ -8,12 +8,13 @@
 #include <sys/mman.h>
 #include <csignal>
 #include "logger/logger.h"
+#include "share/s_tni.h"
 
 extern "C" {
     /// @param obj_size size_t. amount of memory to be allocated
-    void *allocate_memory(size_t obj_size) {
+    tvalue *allocate_memory(size_t obj_size) {
         // virtual alloc for win: https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc
-        void *ptr = mmap(NULL, obj_size * sizeof(void *), PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0);
+        void *ptr = mmap(NULL, obj_size * sizeof(tvalue*), PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0);
         if (ptr == MAP_FAILED) {
             log("mapping failed", LoggingLevel::ERROR, stdout);
             return NULL;
@@ -54,7 +55,7 @@ extern "C" {
     }
 
     /// @param obj_memory void *. object to be deallocated.
-    void dealloc_memory(void *obj_memory) {
+    void dealloc_memory(tvalue *obj_memory) {
         #if DEBUG_MODE
             char obj_address[18];
             snprintf(obj_address, (size_t) 18, "%p", obj_memory);
@@ -67,6 +68,8 @@ extern "C" {
         #endif
         if(munmap(obj_memory, 10*sizeof(int)) != 0)
             log("unmapping failed", LoggingLevel::ERROR, stdout);
+        free(obj_memory);
+        obj_memory = NULL;
     }
 };
 

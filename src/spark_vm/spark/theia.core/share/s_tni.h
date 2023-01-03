@@ -59,7 +59,7 @@ typedef t_objectArray *tobjectArray;
     tint in;
     tlong tl;
     tfloat fl;
-    tdouble du; // not "do" because "do" reserved by C++
+    tdouble du; // not "do" because "do" is a keyword
     tobject ob;
 } tvalue;
 
