@@ -2,6 +2,8 @@
 // Created by Kirill Zhukov on 05.12.2022.
 //
 
+// share theia native interface
+
 #ifndef VM_WITH_HEAP_S_TNI_H
 #define VM_WITH_HEAP_S_TNI_H
 
@@ -57,7 +59,7 @@ typedef t_objectArray *tobjectArray;
     tint in;
     tlong tl;
     tfloat fl;
-    tdouble du; // not "do" because "do" reserved by C++
+    tdouble du; // not "do" because "do" is a keyword
     tobject ob;
 } tvalue;
 

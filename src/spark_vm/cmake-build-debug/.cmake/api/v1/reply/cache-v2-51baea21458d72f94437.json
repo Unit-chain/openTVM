@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/Boost-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/Boost-1.80.0"
 		},
 		{
 			"name" : "Boost_INCLUDE_DIR",
@@ -107,7 +107,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "23"
+			"value" : "24"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -120,6 +120,18 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "2"
+		},
+		{
+			"name" : "CMAKE_COLOR_DIAGNOSTICS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable colored diagnostics throughout."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -486,6 +498,18 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_FIND_PACKAGE_REDIRECTS_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake."
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/kirillzhukov/CLionProjects/spark_vm/cmake-build-debug/CMakeFiles/pkgRedirects"
+		},
+		{
 			"name" : "CMAKE_GENERATOR",
 			"properties" : 
 			[
@@ -763,7 +787,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "12.0"
+			"value" : "13.0"
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -775,7 +799,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk"
+			"value" : "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -867,7 +891,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/share/cmake-3.23"
+			"value" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/share/cmake-3.24"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1115,7 +1139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake][c ][v1.79.0()]"
+			"value" : "[/opt/homebrew/lib/cmake/Boost-1.80.0/BoostConfig.cmake][c ][v1.80.0()]"
 		},
 		{
 			"name" : "boost_headers_DIR",
@@ -1131,7 +1155,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/opt/homebrew/lib/cmake/boost_headers-1.79.0"
+			"value" : "/opt/homebrew/lib/cmake/boost_headers-1.80.0"
 		},
 		{
 			"name" : "vm_with_heap_BINARY_DIR",
