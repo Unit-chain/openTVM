@@ -1,5 +1,0 @@
-"/Applications/CLion 2.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Applications/CLion 2.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/kirillzhukov/CLionProjects/spark_vm -B /Users/kirillzhukov/CLionProjects/spark_vm/cmake-build-debug
--- Found OpenSSL: /opt/homebrew/Cellar/openssl@3/3.0.7/lib/libcrypto.dylib (found version "3.0.7")  
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/kirillzhukov/CLionProjects/spark_vm/cmake-build-debug
