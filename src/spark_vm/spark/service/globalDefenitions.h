@@ -8,7 +8,6 @@
 #define DEBUG_MODE true
 #define COLORFUL_TERMINAL true
 
-
 //    __linux__       Defined on Linux
 //    __sun           Defined on Solaris
 //    __FreeBSD__     Defined on FreeBSD
@@ -53,5 +52,24 @@
         return(dlen + (s - src));	/* count does not include nul */
     }
 #endif
+
+#ifdef DEBUG_MODE
+#  define ALWAYS_INLINE static inline
+#else
+#  ifdef _MSC_VER
+#    define ALWAYS_INLINE static __forceinline
+#  else
+#    define ALWAYS_INLINE JEMALLOC_ATTR(always_inline) static inline
+#  endif
+#endif
+#ifdef _MSC_VER
+#  define inline _inline
+#endif
+
+const size_t K = 1024;  // kilo
+constexpr size_t M = K * K; // mega
+constexpr size_t G = M * K; // giga
+
+const size_t typical_page_size = 4 * K; // 4096 bytes
 
 #endif //VM_WITH_HEAP_GLOBALDEFENITIONS_H

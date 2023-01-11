@@ -40,4 +40,6 @@ add_executable(vm_with_heap
         spark/memory/alloc.h
         spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h spark/memory/pheap.h)
 
+find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} Boost::boost)
+target_link_libraries(${PROJECT_NAME} OpenSSL::SSL)

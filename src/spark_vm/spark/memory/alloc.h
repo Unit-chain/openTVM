@@ -14,8 +14,10 @@ extern "C" {
     /// @param obj_size size_t. amount of memory to be allocated
     tvalue *allocate_memory(size_t obj_size) {
         // virtual alloc for win: https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc
-        void *ptr = mmap(NULL, obj_size * sizeof(tvalue*), PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0);
+//        const size_t page_size = os::vm_page_size();
+        void *ptr = mmap(NULL, obj_size * sizeof(tvalue*), PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_NORESERVE, -1, 0);
         if (ptr == MAP_FAILED) {
+//            munmap(ptr, page_size);
             log("mapping failed", LoggingLevel::ERROR, stdout);
             return NULL;
         }

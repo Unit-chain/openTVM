@@ -29,6 +29,14 @@ int main(int argc, char* argv[]) {
 #define print(x) puts(#x)
 #define concat(x, y) print(x##y)
 
+#define MEMORY_TYPES_DO(f)                                                           \
+  /* Memory type by sub systems. It occupies lower byte. */                          \
+  f(mtJavaHeap,       "Java Heap")   /* Java heap                                 */ \
+
+void test(const std::string& str) {
+    puts(str.c_str());
+}
+
 int main() {
     #if 0
         std::string test_err = "test_string";
@@ -39,8 +47,10 @@ int main() {
         log(test_err.c_str(), LoggingLevel::DEBUG, stdout);
         log(test_err.c_str(), "dwaddwdawa", stdout);
     #endif
+
     print(10);
     concat(10,50);
+
 //    int N=5;
 //    int *ptr = (int *) mmap ( NULL, N*sizeof(int),
 //                      PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0 );
