@@ -22,8 +22,11 @@ typedef float tfloat;
 typedef double tdouble;
 typedef tint tsize;
 typedef bool tboolean;
+#ifdef __UINT64_TYPE__
+typedef uint64_t tuint64;
 typedef boost::multiprecision::uint128_t tuint128;
 typedef boost::multiprecision::uint256_t tuint256;
+#endif
 
 class t_object{};
 class t_class : public t_object{};

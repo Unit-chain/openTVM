@@ -66,6 +66,12 @@
 #  define inline _inline
 #endif
 
+typedef unsigned char       u_char;
+typedef u_char*            address;
+typedef uintptr_t     address_word;
+
+
+
 const size_t K = 1024;  // kilo
 constexpr size_t M = K * K; // mega
 constexpr size_t G = M * K; // giga

@@ -1,23 +1,4 @@
 #include <iostream>
-
-#if 0
-class _test {
-public:
-    int a = 10;
-};
-
-typedef _test* test;
-
-typedef std::pair<int, int> complex;
-
-int main(int argc, char* argv[]) {
-    char* a = new char;
-    test a = new _test();
-    std::cout << (a == nullptr) << std::endl;
-    return 0;
-}
-#endif
-
 #include <cstdio>
 #include <sys/mman.h>
 #include "logger/loggerTime.h"
