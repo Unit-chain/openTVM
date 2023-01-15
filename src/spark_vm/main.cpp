@@ -18,8 +18,19 @@ void test(const std::string& str) {
     puts(str.c_str());
 }
 
+struct btest {
+    bool a = true;
+    bool b = true;
+    bool c = true;
+    bool d = true;
+    bool e = true;
+    bool f = true;
+    bool g = true;
+    bool h = true;
+};
+
 int main() {
-    #if 0
+#if 0
         std::string test_err = "test_string";
         log(test_err.c_str(), LoggingLevel::INFO, stdout);
         log(test_err.c_str(), LoggingLevel::ERROR, stdout);
@@ -27,11 +38,21 @@ int main() {
         log(test_err.c_str(), LoggingLevel::TRACE, stdout);
         log(test_err.c_str(), LoggingLevel::DEBUG, stdout);
         log(test_err.c_str(), "dwaddwdawa", stdout);
-    #endif
+        concat(10,50);
+        print(10);
+#endif
 
-    print(10);
-    concat(10,50);
+#if 1
+    int a = 10;
+    auto p = (uintptr_t) &a;
+    auto pt = (long) &a;
+    std::cout << &a << std::endl;
+    std::cout << p << std::endl;
+    std::cout << *reinterpret_cast<int*>(p) << std::endl;
 
+    std::cout << pt << std::endl;
+    std::cout << *reinterpret_cast<int*>(pt) << std::endl;
+#endif
 //    int N=5;
 //    int *ptr = (int *) mmap ( NULL, N*sizeof(int),
 //                      PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, 0, 0 );

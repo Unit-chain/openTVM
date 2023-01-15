@@ -37,7 +37,7 @@ extern "C" {
     ///  @param [in] msg string. data will be written
     ///  @param [in] loggingType string. info/warn/error/debug
     ///  @param [in] streamType FILE*. stdin/stdout/stderr
-    inline void log(const char *msg, const char *loggingType, FILE *stream) {
+    inline void logging(const char *msg, const char *loggingType, FILE *stream) {
         #if COLORFUL_TERMINAL
             if (strlen(loggingType) > 7) {
                 fprintf(stream, "%s [" RED_STRING("%s") "] --- %s%s\n", c_loggingTimeStr(), LoggingLevel::ERROR,

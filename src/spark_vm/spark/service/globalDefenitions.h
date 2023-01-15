@@ -70,7 +70,19 @@ typedef unsigned char       u_char;
 typedef u_char*            address;
 typedef uintptr_t     address_word;
 
+#ifdef _WIN32
 
+#include <windows.h>
+SYSTEM_INFO si;
+GetSystemInfo(&si);
+const size_t page_size = si.dwPageSize;
+
+#elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__APPLE__) || defined(__linux__) || defined(__NetBSD__)
+
+#include <unistd.h>
+const size_t page_size = (size_t)getpagesize();
+
+#endif
 
 const size_t K = 1024;  // kilo
 constexpr size_t M = K * K; // mega

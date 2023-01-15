@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.24)
 project(vm_with_heap)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -38,7 +38,7 @@ add_executable(vm_with_heap
         spark/share/utilities/hash/SHA256.cpp
         spark/share/utilities/hash/City.cpp
         spark/memory/alloc.h
-        spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h spark/memory/pheap.h)
+        spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h spark/memory/pheap.h spark/share/utilities/accessFlags.h spark/share/runtime/os.h)
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} Boost::boost)
