@@ -10,6 +10,7 @@
 class Klass {
 public:
     Klass *_super;
+
 //    Klass *;
 
     // access flags

@@ -7,6 +7,8 @@
 #ifndef VM_WITH_HEAP_S_TNI_H
 #define VM_WITH_HEAP_S_TNI_H
 
+#include "boost/multiprecision/cpp_int.hpp"
+
 #ifdef _WIN32
     #include "win/tni.h"
 #else
@@ -20,10 +22,15 @@ typedef float tfloat;
 typedef double tdouble;
 typedef tint tsize;
 typedef bool tboolean;
+typedef uint32_t tuint32;
+#ifdef __UINT64_TYPE__
+typedef uint64_t tuint64;
+typedef boost::multiprecision::uint128_t tuint128;
+typedef boost::multiprecision::uint256_t tuint256;
+#endif
 
 class t_object{};
 class t_class : public t_object{};
-class t_throwable : public t_object{};
 class t_string : public t_object {};
 class t_array : public t_object {};
 class t_booleanArray : public t_array {};
@@ -38,7 +45,6 @@ class t_objectArray : public t_array {};
 
 typedef t_object *tobject;
 typedef t_class *tclass;
-typedef t_throwable *tthrowable;
 typedef t_string *tstring;
 typedef t_array *tarray;
 typedef t_booleanArray *tbooleanArray;
@@ -53,14 +59,18 @@ typedef t_objectArray *tobjectArray;
 
 [[maybe_unused]] typedef union tvalue {
     tboolean bo;
-    tbyte by;
-    tchar ch;
-    tshort sh;
-    tint in;
-    tlong tl;
-    tfloat fl;
-    tdouble du; // not "do" because "do" is a keyword
-    tobject ob;
+    tbyte    by;
+    tchar    ch;
+    tshort   sh;
+    tint     in;
+    tlong    tl;
+    tfloat   fl;
+    tdouble  du; // not "do" because "do" is a keyword
+    tobject  ob;
+    tuint32  t32;
+    tuint64  t64;
+    tuint128 t128;
+    tuint256 t256;
 } tvalue;
 
 class t_fieldID{};
@@ -80,5 +90,12 @@ typedef struct {
     char *signature;
     void *fnPtr;
 } TNINativeMethod;
+
+/// @note
+/// returning values from Theia Native Interface
+#define TNI_OK      0
+#define TNI_ERR     (-1)
+#define TNI_VERSION (-2)
+#define TNI_NEMEM   (-3)
 
 #endif //VM_WITH_HEAP_S_TNI_H

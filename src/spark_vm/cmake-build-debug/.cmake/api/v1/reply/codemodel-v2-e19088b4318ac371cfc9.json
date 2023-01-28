@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.21"
+						"string" : "3.24"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "vm_with_heap::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-vm_with_heap-Debug-f8e540195a91ec5851bf.json",
+					"jsonFile" : "target-vm_with_heap-Debug-297cae6f430487ca17c0.json",
 					"name" : "vm_with_heap",
 					"projectIndex" : 0
 				}
