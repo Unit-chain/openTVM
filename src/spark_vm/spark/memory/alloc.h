@@ -8,7 +8,7 @@
 #include <sys/mman.h>
 #include <csignal>
 #include "logger/logger.h"
-#include "share/s_tni.h"
+#include "share/s_ti.h"
 
 extern "C" {
     /// @param obj_size size_t. amount of memory to be allocated

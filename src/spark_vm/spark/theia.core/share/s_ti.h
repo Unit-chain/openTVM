@@ -4,8 +4,8 @@
 
 // share theia native interface
 
-#ifndef VM_WITH_HEAP_S_TNI_H
-#define VM_WITH_HEAP_S_TNI_H
+#ifndef VM_WITH_HEAP_S_TI_H
+#define VM_WITH_HEAP_S_TI_H
 
 #include "boost/multiprecision/cpp_int.hpp"
 
@@ -25,9 +25,13 @@ typedef bool tboolean;
 typedef uint32_t tuint32;
 #ifdef __UINT64_TYPE__
 typedef uint64_t tuint64;
-typedef boost::multiprecision::uint128_t tuint128;
-typedef boost::multiprecision::uint256_t tuint256;
 #endif
+#ifdef __SIZEOF_INT128__
+typedef __uint128_t tuint128;
+#elif
+typedef boost::multiprecision::uint128_t tuint128;
+#endif
+typedef boost::multiprecision::uint256_t tuint256;
 
 class t_object{};
 class t_class : public t_object{};
@@ -65,7 +69,7 @@ typedef t_objectArray *tobjectArray;
     tint     in;
     tlong    tl;
     tfloat   fl;
-    tdouble  du; // not "do" because "do" is a keyword
+    tdouble  du;
     tobject  ob;
     tuint32  t32;
     tuint64  t64;
@@ -98,4 +102,4 @@ typedef struct {
 #define TNI_VERSION (-2)
 #define TNI_NEMEM   (-3)
 
-#endif //VM_WITH_HEAP_S_TNI_H
+#endif //VM_WITH_HEAP_S_TI_H

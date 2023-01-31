@@ -5,7 +5,7 @@
 #ifndef VM_WITH_HEAP_PHEAP_H
 #define VM_WITH_HEAP_PHEAP_H
 #include <cstdio>
-#include "share/s_tni.h"
+#include "share/s_ti.h"
 
 extern "C" {
     ///              ________________________

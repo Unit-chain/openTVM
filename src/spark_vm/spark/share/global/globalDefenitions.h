@@ -5,6 +5,8 @@
 #ifndef VM_WITH_HEAP_GLOBALDEFENITIONS_H
 #define VM_WITH_HEAP_GLOBALDEFENITIONS_H
 
+#include "cstdlib"
+
 #define DEBUG_MODE true
 #define COLORFUL_TERMINAL true
 
@@ -80,6 +82,8 @@ const size_t page_size = si.dwPageSize;
 #elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__APPLE__) || defined(__linux__) || defined(__NetBSD__)
 
 #include <unistd.h>
+#include "share/s_ti.h"
+
 const size_t page_size = (size_t)getpagesize();
 
 #endif
@@ -91,5 +95,10 @@ constexpr size_t G = M * K; // giga
 const size_t typical_page_size = 4 * K; // 4096 bytes
 
 #define byteShifter(byte1, byte2) (byte1 << 8 | byte2)
+#define DESKTOP_EDITION true
+
+typedef     char* cstring;
+typedef          tbyte u1;
+typedef unsigned short u2;
 
 #endif //VM_WITH_HEAP_GLOBALDEFENITIONS_H

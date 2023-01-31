@@ -2,20 +2,12 @@
 #include <future>
 #include <cstdio>
 #include <sys/mman.h>
-#include "logger/loggerTime.h"
-#include "logger/logger.h"
 #include "iostream"
 #include "sstream"
-#include "spark/memory/alloc.h"
-#include "globalDefenitions.h"
+#include "boost/multiprecision/cpp_int.hpp"
+#include "share/s_ti.h"
 
-
-#define print(x) puts(#x)
-#define concat(x, y) print(x##y)
-
-#define MEMORY_TYPES_DO(f)                                                           \
-  /* Memory type by sub systems. It occupies lower byte. */                          \
-  f(mtJavaHeap,       "Java Heap")   /* Java heap                                 */ \
+using namespace boost::multiprecision;
 
 void* alloc_writable_memory(size_t size) {
     void* ptr = mmap(0, size,
@@ -59,40 +51,61 @@ void emit_code_into_memory(unsigned char* m) {
     memcpy(m, code, sizeof(code));
 }
 
-const size_t SIZE = 1024;
+
+void emit_code_into_memory_u256(unsigned char* m) {
+    unsigned char code[] = {
+    };
+    memcpy(m, code, sizeof(code));
+}
+
+void emit_code_into_memory_u128(unsigned char* m) {
+    unsigned char code[] = {
+            0xff, 0x43, 0x00, 0xd1,
+            0xe1, 0x07, 0x00, 0xf9,
+            0xe0, 0x03, 0x00, 0xf9,
+            0xe8, 0x07, 0x40, 0xf9,
+            0xe9, 0x03, 0x40, 0xf9,
+            0x20, 0x11, 0x00, 0xb1,
+            0x09, 0x00, 0x80, 0xd2,
+            0x01, 0x01, 0x09, 0xba,
+            0xff, 0x43, 0x00, 0x91,
+            0xc0, 0x03, 0x5f, 0xd6
+    };
+    memcpy(m, code, sizeof(code));
+}
+
+const size_t SIZE = 4096;
 typedef int (*JittedFunc)(long);
+typedef uint256_t (*JittedFuncU256)(uint256_t);
+typedef tuint128 (*JittedFuncU128)(tuint128);
+typedef uint128_t (*testU)(uint128_t);
+
+#ifdef __SIZEOF_INT128__
+// do some fancy stuff here
+#else
+// do some fallback stuff here
+#endif
 
 int main() {
-    void* m = alloc_writable_memory(SIZE);
-    emit_code_into_memory((unsigned char *) m);
-    make_memory_executable(m, SIZE);
+//    void* m = alloc_writable_memory(SIZE);
+//    emit_code_into_memory((unsigned char *) m);
+//    make_memory_executable(m, SIZE);
+//
+//    JittedFunc func = (JittedFunc)m;
+//    int result = func(2);
+//    printf("result = %d\n", result);
 
-    JittedFunc func = (JittedFunc)m;
-    int result = func(2);
-    printf("result = %d\n", result);
-#if 0
-        std::string test_err = "test_string";
-        log(test_err.c_str(), LoggingLevel::INFO, stdout);
-        log(test_err.c_str(), LoggingLevel::ERROR, stdout);
-        log(test_err.c_str(), LoggingLevel::WARN, stdout);
-        log(test_err.c_str(), LoggingLevel::TRACE, stdout);
-        log(test_err.c_str(), LoggingLevel::DEBUG, stdout);
-        log(test_err.c_str(), "dwaddwdawa", stdout);
-        concat(10,50);
-        print(10);
-#endif
+//    void* n = alloc_writable_memory(SIZE);
+//    emit_code_into_memory_u128((unsigned char *) n);
+//    make_memory_executable(n, SIZE);
+//
+//    auto func = (JittedFuncU128)n;
+//    tuint128 result = func(2);
+//    printf("result = %d\n", result);
 
-#if 0
-    int a = 10;
-    auto p = (uintptr_t) &a;
-    auto pt = (long) &a;
-    std::cout << &a << std::endl;
-    std::cout << p << std::endl;
-    std::cout << *reinterpret_cast<int*>(p) << std::endl;
-
-    std::cout << pt << std::endl;
-    std::cout << *reinterpret_cast<int*>(pt) << std::endl;
-#endif
+    char myRandomData[50];
+    arc4random_buf(myRandomData, sizeof myRandomData);
+    printf("%s", myRandomData);
 
     return 0;
 }

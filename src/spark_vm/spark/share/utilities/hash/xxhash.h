@@ -245,13 +245,13 @@ extern "C" {
  * @brief Emulate a namespace by transparently prefixing all symbols.
  *
  * If you want to include _and expose_ xxHash functions from within your own
- * library, but also want to avoid symbol collisions with other libraries which
+ * library, but also want to avoid Symbol collisions with other libraries which
  * may also include xxHash, you can use XXH_NAMESPACE to automatically prefix
- * any public symbol from xxhash library with the value of XXH_NAMESPACE
+ * any public Symbol from xxhash library with the value of XXH_NAMESPACE
  * (therefore, avoid empty or numeric values).
  *
  * Note that no change is required within the calling program as long as it
- * includes `xxhash.h`: Regular symbol names will be automatically translated
+ * includes `xxhash.h`: Regular Symbol names will be automatically translated
  * by this header.
  */
 #  define XXH_NAMESPACE /* YOUR NAME HERE */

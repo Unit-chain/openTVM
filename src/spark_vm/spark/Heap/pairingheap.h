@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// Heap structure
+// heap structure
 struct HeapNode {
     int key;
     HeapNode *leftChild;
