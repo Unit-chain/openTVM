@@ -28,5 +28,5 @@ void Symbol::setHash(uint32_t hash) {
     _hash = hash;
 }
 
-Symbol::Symbol(u2 length, const char *body, volatile uint32_t hash) : _length(length), _body(body), _hash(hash) {}
+Symbol::Symbol(u2 length, const char *body, volatile uint32_t hash) : _length(length), _body(const_cast<cstring>(body)), _hash(hash) {}
 

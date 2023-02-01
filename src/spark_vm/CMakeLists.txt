@@ -38,7 +38,7 @@ add_executable(vm_with_heap
         spark/share/utilities/hash/SHA256.cpp
         spark/share/utilities/hash/City.cpp
         spark/memory/alloc.h
-        spark/share/services/logger/loggerTime.h spark/share/services/logger/logger.h spark/share/global/globalDefenitions.h spark/memory/pheap.h spark/share/utilities/accessFlags.h spark/share/runtime/os.h spark/cpu/x86/x86.h spark/cpu/arm/arm.h spark/share/services/memory/frame.h spark/share/services/bytecode/bytecodeStream.h spark/share/services/bytecode/bytecodeStream.cpp spark/share/services/memory/metaObject.cpp spark/share/services/memory/metaObject.h spark/share/obj/Symbol.cpp spark/share/obj/Symbol.h spark/share/obj/Method.cpp spark/share/obj/Method.h spark/share/utilities/accessFlags.cpp)
+        spark/share/services/logger/loggerTime.h spark/share/services/logger/logger.h spark/share/global/globalDefenitions.h spark/memory/pheap.h spark/share/utilities/accessFlags.h spark/share/runtime/os.h spark/cpu/x86/x86.h spark/cpu/arm/arm.h spark/share/services/memory/frame.h spark/share/services/bytecode/bytecodeStream.h spark/share/services/bytecode/bytecodeStream.cpp spark/share/services/memory/metaObject.cpp spark/share/services/memory/metaObject.h spark/share/obj/Symbol.cpp spark/share/obj/Symbol.h spark/share/obj/Method.cpp spark/share/obj/Method.h spark/share/utilities/accessFlags.cpp spark/share/obj/MethodData.cpp spark/share/obj/MethodData.h spark/share/obj/MethodData.h spark/share/utilities/Lock.cpp spark/share/utilities/Lock.h spark/share/obj/MethodCounters.cpp spark/share/obj/MethodCounters.h)
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} Boost::boost)

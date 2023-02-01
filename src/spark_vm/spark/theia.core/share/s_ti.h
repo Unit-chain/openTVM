@@ -9,7 +9,7 @@
 
 #include "boost/multiprecision/cpp_int.hpp"
 
-#ifdef _WIN32
+#ifdef _MSC_VER
     #include "win/tni.h"
 #else
     #include "unix/tni.h"
@@ -23,6 +23,7 @@ typedef double tdouble;
 typedef tint tsize;
 typedef bool tboolean;
 typedef uint32_t tuint32;
+
 #ifdef __UINT64_TYPE__
 typedef uint64_t tuint64;
 #endif

@@ -54,6 +54,18 @@ void emit_code_into_memory(unsigned char* m) {
 
 void emit_code_into_memory_u256(unsigned char* m) {
     unsigned char code[] = {
+            0xff, 0x83, 0x00, 0xd1,
+            0xfd, 0x7b, 0x01, 0xa9,
+            0xfd, 0x43, 0x00, 0x91,
+            0xe9, 0x03, 0x08, 0xaa,
+            0xe9, 0x07, 0x00, 0xf9,
+            0xe1, 0x13, 0x00, 0x91,
+            0x89, 0x00, 0x80, 0x52,
+            0xe9, 0x07, 0x00, 0xb9,
+            0x00, 0x00, 0x00, 0x94,
+            0xfd, 0x7b, 0x41, 0xa9,
+            0xff, 0x83, 0x00, 0x91,
+            0xc0, 0x03, 0x5f, 0xd6
     };
     memcpy(m, code, sizeof(code));
 }
@@ -93,14 +105,6 @@ int main() {
 //
 //    JittedFunc func = (JittedFunc)m;
 //    int result = func(2);
-//    printf("result = %d\n", result);
-
-//    void* n = alloc_writable_memory(SIZE);
-//    emit_code_into_memory_u128((unsigned char *) n);
-//    make_memory_executable(n, SIZE);
-//
-//    auto func = (JittedFuncU128)n;
-//    tuint128 result = func(2);
 //    printf("result = %d\n", result);
 
     char myRandomData[50];

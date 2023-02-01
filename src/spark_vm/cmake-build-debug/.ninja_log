@@ -1,9 +1,0 @@
-# ninja log v5
-7	2045	1673793101667928002	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/City.cpp.o	f14ff2cab308ebe1
-0	63	1674933203875272957	build.ninja	4f744ef962a02e5d
-1039	1262	1674922120739820365	vm_with_heap	33b0b0d16933ecb9
-17	1039	1674922120512674620	CMakeFiles/vm_with_heap.dir/main.cpp.o	df1392a2d4234e3
-6	2128	1673793101750428274	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/sha3.cpp.o	bd4de4f660e7dc63
-7	2092	1673793101714601192	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/SHA256.cpp.o	3f5924bb7f0cbee6
-6	1845	1673793101465620681	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/MurmurHash3.cpp.o	b624babc7397648c
-6	1929	1673793101551460213	CMakeFiles/vm_with_heap.dir/spark/share/utilities/hash/xxhash.c.o	5d963893757baee8
