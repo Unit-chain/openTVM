@@ -4,4 +4,4 @@
 
 #include "MethodData.h"
 
-MethodData::MethodData(cstring *code, const Method &backMethod) : _code(reinterpret_cast<cstring>(code)), _backMethod(backMethod) {}
+MethodData::MethodData(cstring *code, void *backMethod) : _code(reinterpret_cast<cstring>(code)), _backMethod(backMethod) {}

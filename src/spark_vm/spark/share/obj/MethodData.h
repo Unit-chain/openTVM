@@ -5,16 +5,18 @@
 #ifndef VM_WITH_HEAP_METHODDATA_H
 #define VM_WITH_HEAP_METHODDATA_H
 #include "mutex"
+#include "memory/metaObject.h"
+#include "utilities/Lock.h"
+#include "global/globalDefenitions.h"
 #include "Method.h"
-
 
 class MethodData : public metaObject {
 public:
-    MethodData(cstring *code, const Method &backMethod);
+    MethodData(cstring *code, void *method);
 private:
     /// pointer to method
     cstring _code;
-    Method _backMethod;
+    void *_backMethod;
     uLock *mutex{};
 };
 

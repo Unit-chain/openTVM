@@ -10,14 +10,16 @@
 #include "utilities/Lock.h"
 #include "utilities/accessFlags.h"
 
+class MethodData;
+
 class Method : public metaObject {
 public:
     volatile Symbol* name;
 private:
     AccessFlags _accessFlags;
     int vTableIndex;
-    MethodData _data;
-    MethodCounters _counters;
+    MethodData *_data;
+    MethodCounters *_counters;
 };
 
 

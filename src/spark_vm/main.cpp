@@ -1,13 +1,17 @@
 #include <iostream>
 #include <future>
 #include <cstdio>
+#include <concepts>
+#include <bitset>
 #include <sys/mman.h>
 #include "iostream"
 #include "sstream"
 #include "boost/multiprecision/cpp_int.hpp"
 #include "share/s_ti.h"
+#include "../../test/LogDuration.h"
+#include "types/integralTypes.h"
 
-using namespace boost::multiprecision;
+//using namespace boost::multiprecision;
 
 void* alloc_writable_memory(size_t size) {
     void* ptr = mmap(0, size,
@@ -88,15 +92,6 @@ void emit_code_into_memory_u128(unsigned char* m) {
 
 const size_t SIZE = 4096;
 typedef int (*JittedFunc)(long);
-typedef uint256_t (*JittedFuncU256)(uint256_t);
-typedef tuint128 (*JittedFuncU128)(tuint128);
-typedef uint128_t (*testU)(uint128_t);
-
-#ifdef __SIZEOF_INT128__
-// do some fancy stuff here
-#else
-// do some fallback stuff here
-#endif
 
 int main() {
 //    void* m = alloc_writable_memory(SIZE);
@@ -107,9 +102,22 @@ int main() {
 //    int result = func(2);
 //    printf("result = %d\n", result);
 
-    char myRandomData[50];
-    arc4random_buf(myRandomData, sizeof myRandomData);
-    printf("%s", myRandomData);
+//0xffffffffffffffffffffffffffffff61
+
+    char *number_1 = "0x10";
+    char *number_2 = "0x10";
+    char *number_3 = "0x10";
+    boost::multiprecision::uint256_t a(number_1);
+    uint256_t b;
+    set_256(b, stou128_t(number_2, 2), stou128_t(number_3, 2));
+    P_256(b);
+//    pu128(stou128_t(number, 2));
+//    pu128(set_128(10, 10));
+
+
+//    char myRandomData[50];
+//    arc4random_buf(myRandomData, sizeof myRandomData);
+//    printf("\n%s", myRandomData);
 
     return 0;
 }
