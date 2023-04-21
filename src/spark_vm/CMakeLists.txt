@@ -9,7 +9,8 @@ include_directories(
         spark/share
         spark/theia.core
         spark/share/utilities
-        spark/service
+        spark/share/services
+        spark/memory/
 )
 
 #file(GLOB_RECURSE SOURCE_FILES "*.cpp" "*.hpp" "*.c" "*.h")
@@ -18,12 +19,11 @@ include_directories(
 
 add_executable(vm_with_heap
         main.cpp
-        spark/Heap/pairingheap.h
-        spark/share/oops/Klass.h
+        spark/share/obj/klassRef.h
         spark/share/utilities/hash/xxhash.h
         spark/theia.core/unix/tni.h
         spark/theia.core/win/tni.h
-        spark/theia.core/share/s_tni.h
+        spark/theia.core/share/s_ti.h
         spark/share/utilities/hash/MurmurHash3.cpp
         spark/share/utilities/hash/MurmurHash3.h
         spark/share/utilities/hash/xxhash.c
@@ -37,8 +37,51 @@ add_executable(vm_with_heap
         spark/share/utilities/hash/SHA256.h
         spark/share/utilities/hash/SHA256.cpp
         spark/share/utilities/hash/City.cpp
-        spark/memory/alloc.h
-        spark/service/logger/loggerTime.h spark/service/logger/logger.h spark/service/globalDefenitions.h spark/memory/pheap.h spark/share/utilities/accessFlags.h spark/share/runtime/os.h)
+        spark/memory/thalloc.h
+        spark/share/services/logger/loggerTime.h
+        spark/share/services/logger/logger.h
+        spark/share/global/globalDefenitions.h
+        spark/share/utilities/accessFlags.h
+        spark/cpu/x86/x86.h spark/cpu/arm/arm.h
+        spark/share/services/memory/frame.h
+        spark/share/services/bytecode/bytecodeStream.h
+        spark/share/services/bytecode/bytecodeStream.cpp
+        spark/share/services/memory/metaObject.cpp
+        spark/share/services/memory/metaObject.h
+        spark/share/obj/Symbol.cpp
+        spark/share/obj/Symbol.h
+        spark/share/obj/Method.cpp
+        spark/share/obj/Method.h
+        spark/share/utilities/accessFlags.cpp
+        spark/share/obj/MethodData.cpp
+        spark/share/obj/MethodData.h
+        spark/share/obj/MethodData.h
+        spark/share/utilities/Lock.cpp
+        spark/share/utilities/Lock.h
+        spark/share/obj/MethodCounters.cpp
+        spark/share/obj/MethodCounters.h
+        spark/share/types/integralTypes.h
+        spark/theia.core/code/compiledCode.h
+        spark/memory/enviroment_memory.h
+        spark/memory/chunk.h
+        spark/memory/pages.h
+        spark/memory/m_bitmap.h
+        spark/memory/m_bitmap.c
+        spark/memory/arena.h
+        spark/memory/chunk_mmap.h
+        spark/memory/pairing_heap.h
+        spark/memory/rbt.h
+        spark/memory/umalloc.h
+        spark/memory/os.h
+        spark/memory/redblackt.h
+        spark/memory/ph.h
+        spark/memory/ph.c
+        spark/memory/chunk.c
+        spark/memory/dev_alloc.c
+        spark/memory/dev_alloc.h
+        spark/memory/pages.c
+        spark/memory/rtree.h spark/memory/rtree.c spark/memory/thalloc.c spark/interpreter/readBuffer.h spark/interpreter/readBuffer.c test/LogDuration.h)
+
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME} Boost::boost)

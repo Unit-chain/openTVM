@@ -6,7 +6,7 @@
 #define VM_WITH_HEAP_TNI_H
 
 #define NATIVECALL __stdcall
-#ifdef _WIN32
+#ifdef _MSC_VER
 typedef __int64 tlong;
 typedef long tint;
 #endif

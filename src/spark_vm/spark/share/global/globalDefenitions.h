@@ -5,6 +5,13 @@
 #ifndef VM_WITH_HEAP_GLOBALDEFENITIONS_H
 #define VM_WITH_HEAP_GLOBALDEFENITIONS_H
 
+#include <thread>
+#include <cstdlib>
+#include <unistd.h>
+#include "share/s_ti.h"
+#include "os.h"
+#include "utilities/hash/xxhash.h"
+
 #define DEBUG_MODE true
 #define COLORFUL_TERMINAL true
 
@@ -70,24 +77,21 @@ typedef unsigned char       u_char;
 typedef u_char*            address;
 typedef uintptr_t     address_word;
 
-#ifdef _WIN32
-
-#include <windows.h>
-SYSTEM_INFO si;
-GetSystemInfo(&si);
-const size_t page_size = si.dwPageSize;
-
-#elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__APPLE__) || defined(__linux__) || defined(__NetBSD__)
-
-#include <unistd.h>
-const size_t page_size = (size_t)getpagesize();
-
-#endif
 
 const size_t K = 1024;  // kilo
 constexpr size_t M = K * K; // mega
 constexpr size_t G = M * K; // giga
 
 const size_t typical_page_size = 4 * K; // 4096 bytes
+
+#define byteShifter(byte1, byte2) (byte1 << 8 | byte2)
+#define DESKTOP_EDITION true
+
+typedef unsigned char instruction;
+typedef         unsigned short u2;
+typedef             char* cstring;
+typedef                  tbyte u1;
+
+#define CPUS std::thread::hardware_concurrency()
 
 #endif //VM_WITH_HEAP_GLOBALDEFENITIONS_H
