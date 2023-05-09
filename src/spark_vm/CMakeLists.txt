@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(vm_with_heap)
+project(spark)
 
 set(CMAKE_CXX_STANDARD 20)
 set(DCMAKE_VARIABLE_NAME /opt/homebrew/Cellar/zstd/1.5.5/lib)
@@ -19,7 +19,7 @@ include_directories(
 #
 #add_executable(spark_vm ${SOURCE_FILES})
 
-add_executable(vm_with_heap
+add_executable(${PROJECT_NAME}
         main.cpp
         spark/share/utilities/hash/xxhash.h
         spark/theia.core/unix/tni.h
@@ -45,8 +45,6 @@ add_executable(vm_with_heap
         spark/share/utilities/accessFlags.cpp
         spark/share/types/integralTypes.h
         spark/memory/os.h
-        spark/interpreter/readBuffer.h
-        spark/interpreter/readBuffer.c
         test/LogDuration.h
         spark/share/obj/object_ref.cpp
         spark/share/obj/object_ref.h
@@ -56,8 +54,8 @@ add_executable(vm_with_heap
         spark/share/obj/method.h
         spark/share/utilities/compression/zstd_decompression.cpp
         spark/share/utilities/compression/zstd_decompression.h
-        spark/share/utilities/BytecodeFileReader.cpp
-        spark/share/utilities/BytecodeFileReader.h
+        spark/share/utilities/read/BytecodeFileReader.cpp
+        spark/share/utilities/read/BytecodeFileReader.h
         spark/share/utilities/hash/unordered/th_hash.c
         spark/share/utilities/hash/unordered/th_hash.h
         spark/share/utilities/hash/unordered/CustomHash.h

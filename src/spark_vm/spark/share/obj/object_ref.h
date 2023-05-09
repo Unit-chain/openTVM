@@ -15,7 +15,7 @@ namespace theia {
     class MetaObject {
     public:
         MetaObject();
-        MetaObject(tint flags, char *name);
+        MetaObject(tint_t flags, char *name);
     public:
         AccessFlags flags;
         char* name;

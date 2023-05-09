@@ -8,6 +8,6 @@ theia::MetaObject::MetaObject() {
     this->flags.setFlags(ACC_PUBLIC);
 }
 
-theia::MetaObject::MetaObject(tint flags, char *name) : flags(flags) {
+theia::MetaObject::MetaObject(tint_t flags, char *name) : flags(flags) {
     this->name = name;
 }

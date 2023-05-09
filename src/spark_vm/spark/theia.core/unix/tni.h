@@ -6,9 +6,9 @@
 #define VM_WITH_HEAP_TNI_H
 
 #define NATIVECALL
-typedef int tint;
+typedef int tint_t;
 #ifdef _LP64
-typedef long tlong;
+typedef long tlong_t;
 #else
 typedef long long tlong;
 #endif

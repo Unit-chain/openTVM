@@ -23,25 +23,25 @@ enum : u2 {
 class AccessFlags {
 public:
     AccessFlags();
-    explicit AccessFlags(tint flags);
+    explicit AccessFlags(tint_t flags);
 
-    [[nodiscard]] bool isPublic() const;
-    [[nodiscard]] bool isPrivate() const;
-    [[nodiscard]] bool isSuper() const;
-    [[nodiscard]] bool isProtected() const;
-    [[nodiscard]] bool isAttribute() const;
-    [[nodiscard]] bool isStatic() const;
-    [[nodiscard]] bool isFinal() const;
-    [[nodiscard]] bool isNative() const;
-    [[nodiscard]] bool isAbstract() const;
-    [[nodiscard]] bool isInterface() const;
-    [[nodiscard]] bool isEnum() const;
-    [[nodiscard]] bool isPrivateOrProtected() const;
+    [[nodiscard]] tboolean_t isPublic() const;
+    [[nodiscard]] tboolean_t isPrivate() const;
+    [[nodiscard]] tboolean_t isSuper() const;
+    [[nodiscard]] tboolean_t isProtected() const;
+    [[nodiscard]] tboolean_t isAttribute() const;
+    [[nodiscard]] tboolean_t isStatic() const;
+    [[nodiscard]] tboolean_t isFinal() const;
+    [[nodiscard]] tboolean_t isNative() const;
+    [[nodiscard]] tboolean_t isAbstract() const;
+    [[nodiscard]] tboolean_t isInterface() const;
+    [[nodiscard]] tboolean_t isEnum() const;
+    [[nodiscard]] tboolean_t isPrivateOrProtected() const;
 
-    [[nodiscard]] tint getFlags() const;
-    void setFlags(tint flags);
+    [[nodiscard]] tint_t getFlags() const;
+    void setFlags(tint_t flags);
 private:
-    tint flags;
+    tint_t flags;
 };
 
 #endif //VM_WITH_HEAP_ACCESSFLAGS_H

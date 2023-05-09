@@ -23,7 +23,7 @@
 // This file provides CityHash64() and related functions.
 //
 // It's probably possible to create even faster hash functions by
-// writing a program that systematically explores some of the space of
+// writing a read_program that systematically explores some of the space of
 // possible hash functions, by using SIMD instructions, or by
 // compromising on hash quality.
 

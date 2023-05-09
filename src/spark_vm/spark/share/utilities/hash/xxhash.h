@@ -250,7 +250,7 @@ extern "C" {
  * any public Symbol from xxhash library with the value of XXH_NAMESPACE
  * (therefore, avoid empty or numeric values).
  *
- * Note that no change is required within the calling program as long as it
+ * Note that no change is required within the calling read_program as long as it
  * includes `xxhash.h`: Regular Symbol names will be automatically translated
  * by this header.
  */

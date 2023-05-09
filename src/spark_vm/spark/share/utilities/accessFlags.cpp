@@ -48,15 +48,15 @@ bool AccessFlags::isEnum() const {
     return (this->flags & ACC_ENUM) != 0;
 }
 
-tint AccessFlags::getFlags() const {
+tint_t AccessFlags::getFlags() const {
     return flags;
 }
 
-void AccessFlags::setFlags(tint flags) {
+void AccessFlags::setFlags(tint_t flags) {
     flags = flags;
 }
 
-AccessFlags::AccessFlags(tint flags) : flags(flags) {}
+AccessFlags::AccessFlags(tint_t flags) : flags(flags) {}
 
 AccessFlags::AccessFlags() : flags(0) {}
 

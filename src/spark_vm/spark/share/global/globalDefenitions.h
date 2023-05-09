@@ -85,7 +85,7 @@ constexpr size_t G = M * K; // giga
 typedef unsigned char instruction;
 typedef         unsigned short u2;
 typedef             char* cstring;
-typedef                  tbyte u1;
+typedef                  tbyte_t u1;
 
 #define CPUS std::thread::hardware_concurrency()
 
