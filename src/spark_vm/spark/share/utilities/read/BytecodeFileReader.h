@@ -51,18 +51,26 @@ struct ProgramFile {
 
 enum BytecodeError : tuint16_t {
     ERR_FILE_OPEN       = 0x0001,
-    ERR_READ_EOCD       = 0x0002,
+    ERR_BAD_EOCD        = 0x0002,
     ERR_BAD_EOCD_SIGN   = 0x0003,
     ERR_BAD_CD_SIGN     = 0x0004,
-    ERR_BAD_FILENAME    = 0x0005
+    ERR_BAD_FILENAME    = 0x0005,
+    ERR_BAD_COMPRESSION = 0x0006,
+    ERR_BAD_PROGRAM     = 0x0007
 };
 
-typedef void (*bytecode_read_error_handler)(BytecodeError);
+///@brief error processor
+///@return 1 if execution should be stopped
+typedef int (*bytecode_read_error_handler)(BytecodeError);
 
 class BytecodeFileReader {
 public:
     BytecodeFileReader() = delete;
     BytecodeFileReader(const char *path, bytecode_read_error_handler errorHandler);
+public:
+    bool err;
+public:
+    std::shared_ptr<char> getFiledata(const char* name);
 private:
     EOCD eocd;
     const char *path;
