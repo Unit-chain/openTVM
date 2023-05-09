@@ -1,5 +1,9 @@
 //
-// Created by Kirill Zhukov on 31.01.2023.
+// Created by Kirill Zhukov on 07.05.2023.
 //
 
-#include "Method.h"
+#include "method.h"
+
+void theia::method::loadCode(FILE *fptr, int offset) {
+
+}

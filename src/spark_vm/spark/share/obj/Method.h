@@ -1,26 +1,22 @@
 //
-// Created by Kirill Zhukov on 31.01.2023.
+// Created by Kirill Zhukov on 07.05.2023.
 //
 
 #ifndef VM_WITH_HEAP_METHOD_H
 #define VM_WITH_HEAP_METHOD_H
-#include "Symbol.h"
-#include "MethodCounters.h"
-#include "utilities/Lock.h"
-#include "utilities/accessFlags.h"
+#include "object_ref.h"
+#include "klass.h"
 
-class MethodData;
-
-class Method : public metaObject {
-public:
-    Method();
-    volatile Symbol* name;
-private:
-    MethodData *_data;
-    AccessFlags _accessFlags;
-    MethodCounters *_counters;
-    int vTableIndex;
-};
-
+namespace theia {
+    ///@param owner null if method is outside class
+    class method : public theia::MetaObject {
+    public:
+        std::unique_ptr<klass> owner;
+    private:
+        u1 *code;
+    public:
+        void loadCode(FILE *fptr, int offset);
+    };
+}
 
 #endif //VM_WITH_HEAP_METHOD_H

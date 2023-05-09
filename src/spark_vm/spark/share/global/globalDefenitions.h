@@ -82,11 +82,6 @@ const size_t K = 1024;  // kilo
 constexpr size_t M = K * K; // mega
 constexpr size_t G = M * K; // giga
 
-const size_t typical_page_size = 4 * K; // 4096 bytes
-
-#define byteShifter(byte1, byte2) (byte1 << 8 | byte2)
-#define DESKTOP_EDITION true
-
 typedef unsigned char instruction;
 typedef         unsigned short u2;
 typedef             char* cstring;

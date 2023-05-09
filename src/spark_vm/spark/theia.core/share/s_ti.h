@@ -74,29 +74,4 @@ typedef t_objectArray *tobjectArray;
     tuint256 t256;
 } tvalue;
 
-class t_fieldID{};
-typedef t_fieldID *tfieldID;
-class t_methodID{};
-typedef t_methodID *tmethodID;
-
-typedef enum t_objectType {
-    TNIInvalidRefType    = 0,
-    TNILocalRefType      = 1,
-    TNIGlobalRefType     = 2,
-    TNIWeakGlobalRefType = 3
-} tobjectRefType;
-
-typedef struct {
-    char *name;
-    char *signature;
-    void *fnPtr;
-} TNINativeMethod;
-
-/// @note
-/// returning values from Theia Native Interface
-#define TNI_OK      0
-#define TNI_ERR     (-1)
-#define TNI_VERSION (-2)
-#define TNI_NEMEM   (-3)
-
 #endif //VM_WITH_HEAP_S_TI_H

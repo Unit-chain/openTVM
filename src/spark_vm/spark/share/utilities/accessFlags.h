@@ -36,11 +36,12 @@ public:
     [[nodiscard]] bool isAbstract() const;
     [[nodiscard]] bool isInterface() const;
     [[nodiscard]] bool isEnum() const;
+    [[nodiscard]] bool isPrivateOrProtected() const;
 
     [[nodiscard]] tint getFlags() const;
     void setFlags(tint flags);
 private:
-    tint _flags;
+    tint flags;
 };
 
 #endif //VM_WITH_HEAP_ACCESSFLAGS_H
