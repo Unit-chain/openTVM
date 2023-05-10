@@ -8,8 +8,23 @@
 #include "string"
 #include "hash/unordered/CustomHash.h"
 #include "global/globalDefenitions.h"
+#include "compression/zstd_decompression.h"
 
 #pragma pack(push, 1)
+
+typedef struct {
+    uint32_t signature;
+    uint16_t version;
+    uint16_t flags;
+    uint16_t compression;
+    uint16_t mod_time;
+    uint16_t mod_date;
+    uint32_t crc32;
+    uint32_t compressed_size;
+    uint32_t uncompressed_size;
+    uint16_t filename_length;
+    uint16_t extra_field_length;
+} Local_file_header;
 
 typedef struct {
     tuint32_t signature;
@@ -44,23 +59,28 @@ typedef struct {
 
 #pragma pack(pop)
 
-struct ProgramFile {
-    unsigned long long offset;
-    unsigned long long compressed_size;
-};
+typedef struct {
+    Central_directory_file_header cd;
+    Local_file_header lfh;
+    std::shared_ptr<char> data;
+} Compressed_file;
 
 enum BytecodeError : tuint16_t {
-    ERR_FILE_OPEN       = 0x0001,
-    ERR_BAD_EOCD        = 0x0002,
-    ERR_BAD_EOCD_SIGN   = 0x0003,
-    ERR_BAD_CD_SIGN     = 0x0004,
-    ERR_BAD_FILENAME    = 0x0005,
-    ERR_BAD_COMPRESSION = 0x0006,
-    ERR_BAD_PROGRAM     = 0x0007
+    ERR_FILE_OPEN               = 0x0001,
+    ERR_BAD_EOCD                = 0x0002,
+    ERR_BAD_EOCD_SIGN           = 0x0003,
+    ERR_BAD_CD_SIGN             = 0x0004,
+    ERR_BAD_FILENAME            = 0x0005,
+    ERR_BAD_COMPRESSION         = 0x0006,
+    ERR_BAD_PROGRAM             = 0x0007,
+    ERR_FILE_NOT_FOUND          = 0x0008,
+    ERR_BAD_LOCAL_HEADER        = 0x0009,
+    ERR_BAD_LOCAL_HEADER_SIGN   = 0x000A,
+    ERR_READING_DATA            = 0x000B,
 };
 
 ///@brief error processor
-///@return 1 if execution should be stopped
+///@return returns 1 if execution should be stopped
 typedef int (*bytecode_read_error_handler)(BytecodeError);
 
 class BytecodeFileReader {
@@ -70,12 +90,16 @@ public:
 public:
     bool err;
 public:
-    std::shared_ptr<char> getFiledata(const char* name);
+    ///@brief get uncompressed data from program
+    std::shared_ptr<char> getUncompressedProgram(const char *filename);
 private:
     EOCD eocd;
     const char *path;
     bytecode_read_error_handler errHandler;
+    std::unordered_map<std::string, Compressed_file, CustomHash> c_files;
+#if 0
     std::unordered_map<std::string, Central_directory_file_header, CustomHash> files;
+#endif
 private:
     void read_program();
 };

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(spark)
+project(spark_vm)
 
 set(CMAKE_CXX_STANDARD 20)
 set(DCMAKE_VARIABLE_NAME /opt/homebrew/Cellar/zstd/1.5.5/lib)
@@ -59,12 +59,13 @@ add_executable(${PROJECT_NAME}
         spark/share/utilities/hash/unordered/th_hash.c
         spark/share/utilities/hash/unordered/th_hash.h
         spark/share/utilities/hash/unordered/CustomHash.h
-        spark/share/utilities/hash/unordered/CustomHash.cpp)
+        spark/share/utilities/hash/unordered/CustomHash.cpp
+        )
 
 
 find_package(OpenSSL REQUIRED)
 target_link_libraries(${PROJECT_NAME}
-            Boost::boost
-            OpenSSL::SSL
-            zstd::libzstd_static
-)
+        Boost::boost
+        OpenSSL::SSL
+        zstd::libzstd_static
+        )

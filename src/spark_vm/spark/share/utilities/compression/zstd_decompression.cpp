@@ -17,7 +17,8 @@ filebuff *readFile(const std::string &path) {
 
     char *buff = (char *) malloc(size);
     fread(buff, sizeof(char), size, (FILE *) fp);
-    filebuff *fb = (filebuff *) malloc(sizeof(filebuff));
+    filebuff *fb = (filebuff *) malloc(
+            sizeof(filebuff));
     fb->buff = buff;
     fb->size = size;
     fclose(fp);
@@ -52,9 +53,17 @@ std::shared_ptr<char> getDataFromCompressedFile(char *path, size_t offset, size_
     char compressed_data[compressed_data_size];
     fread(compressed_data, sizeof(char), compressed_data_size, (FILE *) fp);
     size_t uncompressed_size = ZSTD_getFrameContentSize(compressed_data, compressed_data_size);
-    void* uncompressed_data = malloc(uncompressed_size);
+    void *uncompressed_data = malloc(uncompressed_size);
     size_t actual_uncompressed_size = ZSTD_decompress(uncompressed_data, uncompressed_size, compressed_data,
                                                       compressed_data_size);
     fclose(fp);
-    return std::shared_ptr<char>((char *)uncompressed_data);
+    return std::shared_ptr<char>((char *) uncompressed_data);
+}
+
+std::shared_ptr<char> getUncompressedData(char *compressed_data, size_t compressed_size) {
+    size_t uncompressed_size = ZSTD_getFrameContentSize(compressed_data, compressed_size);
+    void *uncompressed_data = malloc(uncompressed_size);
+    size_t actual_uncompressed_size = ZSTD_decompress(uncompressed_data, uncompressed_size, compressed_data,
+                                                      compressed_size);
+    return std::shared_ptr<char>((char *) uncompressed_data);
 }

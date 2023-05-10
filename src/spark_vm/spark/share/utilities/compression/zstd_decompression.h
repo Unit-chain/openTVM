@@ -4,6 +4,7 @@
 
 #ifndef VM_WITH_HEAP_ZSTD_DECOMPRESSION_H
 #define VM_WITH_HEAP_ZSTD_DECOMPRESSION_H
+
 #include "memory"
 #include "string"
 #include "zstd.h"
@@ -13,8 +14,13 @@ struct filebuff {
     char *buff;
 };
 
-filebuff *readFile(const std::string& path);
+filebuff *readFile(const std::string &path);
+
 std::shared_ptr<char> getAllDataFromCompressedFile(char *path);
+
 std::shared_ptr<char> getDataFromCompressedFile(char *path, size_t offset, size_t compressed_data_size);
+
+///@brief uncompress data
+std::shared_ptr<char> getUncompressedData(char *compressed_data, size_t compressed_size);
 
 #endif //VM_WITH_HEAP_ZSTD_DECOMPRESSION_H

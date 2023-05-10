@@ -78,4 +78,18 @@ typedef                  tbyte_t u1;
 
 #define CPUS std::thread::hardware_concurrency()
 
+///@brief concat byte1(b1) and byte2(b2) with cast into "new_type"
+#define concat_bytes(b1, b2, new_type, shift_value)     \
+    ((new_type) b1 << shift_value | b2)
+
+///@brief concat byte1(b1) and byte2(b2) with cast into "int16"
+#define concat_u1_to_u2(b1, b2) \
+    (concat_bytes(b1, b2, uint16_t, 8))
+///@brief concat byte1(b1) and byte2(b2) with cast into "int32"
+#define concat_u2_to_u4(b1, b2) \
+    (concat_bytes(b1, b2, uint32_t, 16))
+///@brief concat byte1(b1) and byte2(b2) with cast into "int64"
+#define concat_u4_to_u8(b1, b2) \
+    (concat_bytes(b1, b2, uint64_t, 32))
+
 #endif //VM_WITH_HEAP_GLOBALDEFENITIONS_H
