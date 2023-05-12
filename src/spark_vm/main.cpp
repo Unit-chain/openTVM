@@ -5,9 +5,7 @@
 #include "read/BytecodeFileReader.h"
 
 int main() {
-//    std::shared_ptr<char> uncompressed_data = getAllDataFromCompressedFile("/Users/kirillzhukov/Desktop/pitch_speech.md.zst");
-//    std::shared_ptr<char> uncompressed_data = getDataFromCompressedFile("/Users/kirillzhukov/Desktop/pitch_speech.md.zst", 0, 3237);
-//    printf("data:\n%s\n", uncompressed_data.get());
-    printf("size: %zu\n", sizeof(Central_directory_file_header));
+    BytecodeFileReader bytecodeFileReader("/Users/kirillzhukov/Desktop/ar/cpp.zip");
+    std::cout << "value: " << '\n' << bytecodeFileReader.getUncompressedProgram("p2p/CMakeLists.txt").get() << '\n';
     return 0;
 }
