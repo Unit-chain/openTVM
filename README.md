@@ -64,7 +64,7 @@ Repository which represents sparkVM(official implementation of Theia Virtual Mac
 |-----|----------|------|-----------|-------------------|------------|
 | 0   | fn       | N/A  | N/A       | function key-word | fn main(): |
 
-# Examples
+# IR(intermediate representation) Examples
 
 ## № 1
 
@@ -75,7 +75,7 @@ fn _main():
 #4 	cnst_2 32
 #5 	add 32, 32
 #6 	cnst_2 32
-@7: ;offset
+@7: ; offset
 #8 	cmp_ge 32, 32, @12
 #9 	cnst_2 32
 #10	add 32, 32
@@ -118,11 +118,11 @@ fn _main():
 
 ```c
 int test() {
-  return 1 + 2;
+	return 1 + 2;
 }
 int main() {
 	int a = test();
-  return 0;
+	return 0;
 }
 ```
 
