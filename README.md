@@ -70,14 +70,14 @@ Repository which represents sparkVM(official implementation of Theia Virtual Mac
 ```assembly
 fn main():
 #1 	align 4
-#3 	cnst_1 32
-#4 	cnst_1 32
+#3 	cnst_2 32
+#4 	cnst_2 32
 #5 	add 32, 32
 #6 	cnst_2 32
 @7: ;offset
 #8 	cmp_ge 32, 32, @12
-#9 	cnst_2
-#10 add
+#9 	cnst_2 32
+#10 add 32, 32
 #11 bl @7
 @12:
 #5 	ret 0, 0 ; 0, 0 means nothing to be returned, second argument not important in this case
@@ -87,7 +87,7 @@ fn main():
 
 ```c
 int main() {
-  int c = 1 + 1;
+  int c = 2 + 2;
   int d = 2;
   while(d < c) {
    	d += 2;
