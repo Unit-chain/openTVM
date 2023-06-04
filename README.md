@@ -64,11 +64,12 @@ Repository which represents sparkVM(official implementation of Theia Virtual Mac
 |-----|----------|------|-----------|-------------------|------------|
 | 0   | fn       | N/A  | N/A       | function key-word | fn main(): |
 
-
 # Examples
 
+## № 1
+
 ```assembly
-fn main():
+fn _main():
 #1 	align 4
 #3 	cnst_2 32
 #4 	cnst_2 32
@@ -92,6 +93,35 @@ int main() {
   while(d < c) {
    	d += 2;
   }
+  return 0;
+}
+```
+
+## № 2
+
+```assembly
+fn _test():
+#1 	align 4
+#2	cnst_1 32
+#3	cnst_2 32
+#4	add 32, 32
+#5	ret 32, #4
+
+fn _main():
+#1 align 4
+#2 call 4, _test
+#3 ret 0, 0
+	
+```
+
+>  C analogue of code above is:
+
+```c
+int test() {
+  return 1 + 2;
+}
+int main() {
+	int a = test();
   return 0;
 }
 ```
