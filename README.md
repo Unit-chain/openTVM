@@ -83,3 +83,16 @@ fn main():
 #5 	ret 0, 0 ; 0, 0 means nothing to be returned, second argument not important in this case
 ```
 
+> C analogue of code above is:
+
+```c
+int main() {
+  int c = 1 + 1;
+  int d = 2;
+  while(d < c) {
+   	d += 2;
+  }
+  return 0;
+}
+```
+
