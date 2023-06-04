@@ -78,8 +78,8 @@ fn _main():
 @7: ;offset
 #8 	cmp_ge 32, 32, @12
 #9 	cnst_2 32
-#10 add 32, 32
-#11 bl @7
+#10	add 32, 32
+#11	bl @7
 @12:
 #5 	ret 0, 0 ; 0, 0 means nothing to be returned, second argument not important in this case
 ```
@@ -108,9 +108,9 @@ fn _test():
 #5	ret 32, #4
 
 fn _main():
-#1 align 4
-#2 call 4, _test
-#3 ret 0, 0
+#1 	align 4
+#2 	call 4, _test
+#3 	ret 0, 0
 	
 ```
 
