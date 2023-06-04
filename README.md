@@ -80,6 +80,6 @@ fn main():
 #10 add
 #11 bl @7
 @12:
-#5 ret 0, 0 ; 0, 0 means nothing to be returned, second argument not important in this case
+#5 	ret 0, 0 ; 0, 0 means nothing to be returned, second argument not important in this case
 ```
 
